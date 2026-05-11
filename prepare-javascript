@@ -1,0 +1,13 @@
+#!/bin/sh -ef
+
+. "$(dirname "$0")/config"
+
+if [ ! -f "${JAVASCRIPT_RUNTIME_DIR}/dist/KaitaiStream.js" ]; then
+	echo "Error: $(realpath "$JAVASCRIPT_RUNTIME_DIR")/dist/KaitaiStream.js doesn't exist (maybe you forgot to run 'npm run build'?)"
+	exit 1
+fi
+
+ln -sf ../../compiled/javascript spec/javascript/compiled
+
+cd spec/javascript
+npm ci

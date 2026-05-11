@@ -25,6 +25,8 @@ mkdir -p "$OUTPUT_DIR"
 	--go-package test_formats \
 	--nim-module "kaitai_struct_nim_runtime" \
 	--nim-opaque "../../tests/spec/nim/opaque/" \
+	--javascript-opaque "../opaque/" \
+	--typescript-opaque "../opaque/" \
 	"$FORMATS_KSY_DIR"/*.ksy || :
 
 if [ "$TARGET" = java ] || [ "$TARGET" = all ]; then
