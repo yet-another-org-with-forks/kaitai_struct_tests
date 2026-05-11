@@ -1,13 +1,20 @@
-var assert = require('assert');
-var testHelper = require('testHelper');
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import { KaitaiStream } from 'kaitai-struct';
 
-testHelper('DebugArrayUser', 'src/fixed_struct.bin', function(r, DebugArrayUser_) {
-  // --debug implies --no-auto-read
-  r._read();
+describe('DebugArrayUser', () => {
+  it('parses test properly', async () => {
+    const { DebugArrayUser } = await import('../compiled/DebugArrayUser.js');
+    const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
+    const r = new DebugArrayUser(io);
 
-  assert.strictEqual(r.oneCat.meow, 80);
-  assert.strictEqual(r.arrayOfCats.length, 3);
-  assert.strictEqual(r.arrayOfCats[0].meow, 65);
-  assert.strictEqual(r.arrayOfCats[1].meow, 67);
-  assert.strictEqual(r.arrayOfCats[2].meow, 75);
+    // --debug implies --no-auto-read
+    r._read();
+
+    assert.strictEqual(r.oneCat.meow, 80);
+    assert.strictEqual(r.arrayOfCats.length, 3);
+    assert.strictEqual(r.arrayOfCats[0].meow, 65);
+    assert.strictEqual(r.arrayOfCats[1].meow, 67);
+    assert.strictEqual(r.arrayOfCats[2].meow, 75);
+  });
 });

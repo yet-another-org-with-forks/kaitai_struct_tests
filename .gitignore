@@ -1,8 +1,12 @@
+node_modules
 /compiled/
 /test_out/
-/node_modules/
 /spec/ks/out/
 /ci_results/
+spec/javascript/compiled
+
+# SBT
+translator/.bsp/
 
 # Byte-compiled Python code
 __pycache__/

@@ -1,5 +1,6 @@
-var assert = require('assert');
-var testHelper = require('testHelper');
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import { KaitaiStream } from 'kaitai-struct';
 
 function validateErr(expectedEncoding, err) {
   if (err instanceof RangeError) {
@@ -31,29 +32,34 @@ function assertUnknownEncoding(expectedEncoding, fn) {
   assert.throws(fn, validateErr.bind(null, expectedEncoding));
 }
 
-testHelper('StrEncodingsEscapingToS', 'src/str_encodings.bin', function(r, StrEncodingsEscapingToS_) {
-  assertUnknownEncoding(
-    "ASCII\\\\x",
-    function() {
-      r.str1;
-    }
-  );
-  assertUnknownEncoding(
-    "UTF-8\\'x",
-    function() {
-      r.str2;
-    }
-  );
-  assertUnknownEncoding(
-    "SJIS\\\"x",
-    function() {
-      r.str3;
-    }
-  );
-  assertUnknownEncoding(
-    "IBM437\\nx",
-    function() {
-      r.str4;
-    }
-  );
+describe('StrEncodingsEscapingToS', () => {
+  it('parses test properly', async () => {
+    const { StrEncodingsEscapingToS } = await import('../compiled/StrEncodingsEscapingToS.js');
+    const io = new KaitaiStream(fs.readFileSync('src/str_encodings.bin'));
+    const r = new StrEncodingsEscapingToS(io);
+    assertUnknownEncoding(
+      "ASCII\\\\x",
+      function() {
+        r.str1;
+      }
+    );
+    assertUnknownEncoding(
+      "UTF-8\\'x",
+      function() {
+        r.str2;
+      }
+    );
+    assertUnknownEncoding(
+      "SJIS\\\"x",
+      function() {
+        r.str3;
+      }
+    );
+    assertUnknownEncoding(
+      "IBM437\\nx",
+      function() {
+        r.str4;
+      }
+    );
+  });
 });
