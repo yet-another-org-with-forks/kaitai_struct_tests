@@ -2,4 +2,4 @@
 
 . "$(dirname "$0")/config"
 
-mocha spec/javascript
+NODE_PRESERVE_SYMLINKS=1 mocha spec/javascript/spec
