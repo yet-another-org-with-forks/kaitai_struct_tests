@@ -1,10 +1,10 @@
 import fs from 'node:fs';
-import assert from 'node:assert/strict';
+import assert from 'node:assert';
 import { KaitaiStream } from 'kaitai-struct';
 
 describe('DebugArrayUserEofException', () => {
   it('parses test properly', async () => {
-    const { DebugArrayUserEofException } = await import('#testformats/DebugArrayUserEofException.js');
+    const { DebugArrayUserEofException } = await import('../compiled/testformats/DebugArrayUserEofException.js');
     const io = new KaitaiStream(fs.readFileSync('src/nav_parent_codes.bin'));
     const r = new DebugArrayUserEofException(io);
 

@@ -1,10 +1,10 @@
 import fs from 'node:fs';
-import assert from 'node:assert/strict';
+import assert from 'node:assert';
 import { KaitaiStream } from 'kaitai-struct';
 
 describe('DebugArrayUser', () => {
   it('parses test properly', async () => {
-    const { DebugArrayUser } = await import('#testformats/DebugArrayUser.js');
+    const { DebugArrayUser } = await import('../compiled/testformats/DebugArrayUser.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new DebugArrayUser(io);
 

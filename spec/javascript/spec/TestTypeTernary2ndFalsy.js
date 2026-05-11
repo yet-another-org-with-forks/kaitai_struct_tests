@@ -1,10 +1,10 @@
 import fs from 'node:fs';
-import assert from 'node:assert/strict';
+import assert from 'node:assert';
 import { KaitaiStream } from 'kaitai-struct';
 
 describe('TypeTernary2ndFalsy', () => {
   it('parses test properly', async () => {
-    const { TypeTernary2ndFalsy } = await import('#testformats/TypeTernary2ndFalsy.js');
+    const { TypeTernary2ndFalsy } = await import('../compiled/testformats/TypeTernary2ndFalsy.js');
     const io = new KaitaiStream(fs.readFileSync('src/switch_integers.bin'));
     const r = new TypeTernary2ndFalsy(io);
     assert.strictEqual(r.vFalse, false);

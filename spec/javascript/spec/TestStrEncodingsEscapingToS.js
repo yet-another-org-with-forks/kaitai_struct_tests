@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import assert from 'node:assert/strict';
+import assert from 'node:assert';
 import { KaitaiStream } from 'kaitai-struct';
 
 function validateErr(expectedEncoding, err) {
@@ -34,7 +34,7 @@ function assertUnknownEncoding(expectedEncoding, fn) {
 
 describe('StrEncodingsEscapingToS', () => {
   it('parses test properly', async () => {
-    const { StrEncodingsEscapingToS } = await import('#testformats/StrEncodingsEscapingToS.js');
+    const { StrEncodingsEscapingToS } = await import('../compiled/testformats/StrEncodingsEscapingToS.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_encodings.bin'));
     const r = new StrEncodingsEscapingToS(io);
     assertUnknownEncoding(

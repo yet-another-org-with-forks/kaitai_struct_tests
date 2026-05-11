@@ -9,10 +9,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "imports": {
-    "#testformats/*.js": "./compiled/testformats/*.js",
-    "#testwrite/*.js": "./compiled/testwrite/*.js"
-  },
   "dependencies": {
     "kaitai-struct": "file:../../../runtime/javascript",
     "nested-deeply": "file:nested-deeply"

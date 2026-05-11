@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import assert from 'node:assert/strict';
+import assert from 'node:assert';
 import { KaitaiStream } from 'kaitai-struct';
 
 // FIXME: fix duplication of `test_str_encodings_escaping_to_s.js` (this is a
@@ -25,7 +25,7 @@ function assertUnknownEncoding(expectedEncoding, fn) {
 
 describe('StrEncodingsEscapingEnc', () => {
   it('parses test properly', async () => {
-    const { StrEncodingsEscapingEnc } = await import('#testformats/StrEncodingsEscapingEnc.js');
+    const { StrEncodingsEscapingEnc } = await import('../compiled/testformats/StrEncodingsEscapingEnc.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_encodings.bin'));
     const r = new StrEncodingsEscapingEnc(io);
     assertUnknownEncoding(

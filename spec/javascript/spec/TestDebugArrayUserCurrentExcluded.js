@@ -1,10 +1,10 @@
 import fs from 'node:fs';
-import assert from 'node:assert/strict';
+import assert from 'node:assert';
 import { KaitaiStream } from 'kaitai-struct';
 
 describe('DebugArrayUserCurrentExcluded', () => {
   it('parses test properly', async () => {
-    const { DebugArrayUserCurrentExcluded } = await import('#testformats/DebugArrayUserCurrentExcluded.js');
+    const { DebugArrayUserCurrentExcluded } = await import('../compiled/testformats/DebugArrayUserCurrentExcluded.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new DebugArrayUserCurrentExcluded(io);
 
