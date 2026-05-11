@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ParamsPassStruct', () => {
   it('parses test properly', async () => {
-    const { ParamsPassStruct } = await import('../compiled/ParamsPassStruct.js');
+    const { ParamsPassStruct } = await import('#testformats/ParamsPassStruct.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_negative.bin'));
     const r = new ParamsPassStruct(io);
     assert.strictEqual(r.first.foo, 255);

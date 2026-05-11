@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('StrLiterals2', () => {
   it('parses test properly', async () => {
-    const { StrLiterals2 } = await import('../compiled/StrLiterals2.js');
+    const { StrLiterals2 } = await import('#testformats/StrLiterals2.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new StrLiterals2(io);
     assert.strictEqual(r.dollar1, "$foo");

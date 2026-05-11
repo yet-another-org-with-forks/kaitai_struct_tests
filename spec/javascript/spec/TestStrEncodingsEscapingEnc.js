@@ -25,7 +25,7 @@ function assertUnknownEncoding(expectedEncoding, fn) {
 
 describe('StrEncodingsEscapingEnc', () => {
   it('parses test properly', async () => {
-    const { StrEncodingsEscapingEnc } = await import('../compiled/StrEncodingsEscapingEnc.js');
+    const { StrEncodingsEscapingEnc } = await import('#testformats/StrEncodingsEscapingEnc.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_encodings.bin'));
     const r = new StrEncodingsEscapingEnc(io);
     assertUnknownEncoding(

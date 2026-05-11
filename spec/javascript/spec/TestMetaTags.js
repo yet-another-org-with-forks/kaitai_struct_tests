@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('MetaTags', () => {
   it('parses test properly', async () => {
-    const { MetaTags } = await import('../compiled/MetaTags.js');
+    const { MetaTags } = await import('#testformats/MetaTags.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new MetaTags(io);
   });

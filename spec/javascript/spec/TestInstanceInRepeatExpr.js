@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('InstanceInRepeatExpr', () => {
   it('parses test properly', async () => {
-    const { InstanceInRepeatExpr } = await import('../compiled/InstanceInRepeatExpr.js');
+    const { InstanceInRepeatExpr } = await import('#testformats/InstanceInRepeatExpr.js');
     const io = new KaitaiStream(fs.readFileSync('src/instance_in_repeat_expr.bin'));
     const r = new InstanceInRepeatExpr(io);
     assert.strictEqual(r.chunks.length, 2);

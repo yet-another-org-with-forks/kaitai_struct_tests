@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('StrPadTermRoundtrip', () => {
   it('parses test properly', async () => {
-    const { StrPadTermRoundtrip } = await import('../compiled/StrPadTermRoundtrip.js');
+    const { StrPadTermRoundtrip } = await import('#testformats/StrPadTermRoundtrip.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_pad_term.bin'));
     const r = new StrPadTermRoundtrip(io);
     assert.strictEqual(r.strPad, "str1");

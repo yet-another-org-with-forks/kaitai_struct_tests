@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('TypeTernaryOpaque', () => {
   it('parses test properly', async () => {
-    const { TypeTernaryOpaque } = await import('../compiled/TypeTernaryOpaque.js');
+    const { TypeTernaryOpaque } = await import('#testformats/TypeTernaryOpaque.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new TypeTernaryOpaque(io);
     assert.strictEqual(r.dif.one, 102);

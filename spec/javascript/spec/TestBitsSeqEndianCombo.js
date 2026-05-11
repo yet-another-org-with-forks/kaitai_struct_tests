@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('BitsSeqEndianCombo', () => {
   it('parses test properly', async () => {
-    const { BitsSeqEndianCombo } = await import('../compiled/BitsSeqEndianCombo.js');
+    const { BitsSeqEndianCombo } = await import('#testformats/BitsSeqEndianCombo.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_xor_4.bin'));
     const r = new BitsSeqEndianCombo(io);
     assert.strictEqual(r.be1, 59);

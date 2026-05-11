@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ProcessCoerceBytes', () => {
   it('parses test properly', async () => {
-    const { ProcessCoerceBytes } = await import('../compiled/ProcessCoerceBytes.js');
+    const { ProcessCoerceBytes } = await import('#testformats/ProcessCoerceBytes.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_coerce_bytes.bin'));
     const r = new ProcessCoerceBytes(io);
     assert.strictEqual(r.records[0].flag, 0);

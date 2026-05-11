@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprBits', () => {
   it('parses test properly', async () => {
-    const { ExprBits } = await import('../compiled/ExprBits.js');
+    const { ExprBits } = await import('#testformats/ExprBits.js');
     const io = new KaitaiStream(fs.readFileSync('src/switch_opcodes.bin'));
     const r = new ExprBits(io);
     assert.strictEqual(r.a, 2);

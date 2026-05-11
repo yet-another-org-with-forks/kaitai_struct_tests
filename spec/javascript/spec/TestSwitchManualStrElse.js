@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('SwitchManualStrElse', () => {
   it('parses test properly', async () => {
-    const { SwitchManualStrElse } = await import('../compiled/SwitchManualStrElse.js');
+    const { SwitchManualStrElse } = await import('#testformats/SwitchManualStrElse.js');
     const io = new KaitaiStream(fs.readFileSync('src/switch_opcodes2.bin'));
     const r = new SwitchManualStrElse(io);
     assert.strictEqual(r.opcodes.length, 4);

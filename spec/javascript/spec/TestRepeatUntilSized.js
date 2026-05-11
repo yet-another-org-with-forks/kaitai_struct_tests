@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('RepeatUntilSized', () => {
   it('parses test properly', async () => {
-    const { RepeatUntilSized } = await import('../compiled/RepeatUntilSized.js');
+    const { RepeatUntilSized } = await import('#testformats/RepeatUntilSized.js');
     const io = new KaitaiStream(fs.readFileSync('src/repeat_until_process.bin'));
     const r = new RepeatUntilSized(io);
     assert.strictEqual(r.records.length, 3);

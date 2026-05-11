@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('NavRootRecursive', () => {
   it('parses test properly', async () => {
-    const { NavRootRecursive } = await import('../compiled/NavRootRecursive.js');
+    const { NavRootRecursive } = await import('#testformats/NavRootRecursive.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_negative.bin'));
     const r = new NavRootRecursive(io);
     assert.strictEqual(r.value, 255);

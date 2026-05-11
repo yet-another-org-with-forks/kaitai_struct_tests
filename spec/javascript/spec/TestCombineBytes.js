@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('CombineBytes', () => {
   it('parses test properly', async () => {
-    const { CombineBytes } = await import('../compiled/CombineBytes.js');
+    const { CombineBytes } = await import('#testformats/CombineBytes.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new CombineBytes(io);
     assert.deepStrictEqual(r.bytesTerm, new Uint8Array([102, 111, 111]));

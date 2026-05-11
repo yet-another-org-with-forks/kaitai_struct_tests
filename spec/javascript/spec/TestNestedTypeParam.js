@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('NestedTypeParam', () => {
   it('parses test properly', async () => {
-    const { NestedTypeParam } = await import('../compiled/NestedTypeParam.js');
+    const { NestedTypeParam } = await import('#testformats/NestedTypeParam.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new NestedTypeParam(io);
     assert.strictEqual(r.mainSeq.myLen, 5);

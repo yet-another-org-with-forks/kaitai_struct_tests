@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('CastToTop', () => {
   it('parses test properly', async () => {
-    const { CastToTop } = await import('../compiled/CastToTop.js');
+    const { CastToTop } = await import('#testformats/CastToTop.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new CastToTop(io);
     assert.strictEqual(r.code, 80);

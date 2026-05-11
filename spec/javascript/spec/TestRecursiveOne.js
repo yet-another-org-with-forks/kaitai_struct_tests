@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('RecursiveOne', () => {
   it('parses test properly', async () => {
-    const { RecursiveOne } = await import('../compiled/RecursiveOne.js');
+    const { RecursiveOne } = await import('#testformats/RecursiveOne.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new RecursiveOne(io);
     assert.strictEqual(r.one, 80);

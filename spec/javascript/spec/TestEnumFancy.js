@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('EnumFancy', () => {
   it('parses test properly', async () => {
-    const { EnumFancy } = await import('../compiled/EnumFancy.js');
+    const { EnumFancy } = await import('#testformats/EnumFancy.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_0.bin'));
     const r = new EnumFancy(io);
     assert.strictEqual(r.pet1, EnumFancy.Animal.CAT);

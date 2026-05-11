@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprIoEof', () => {
   it('parses test properly', async () => {
-    const { ExprIoEof } = await import('../compiled/ExprIoEof.js');
+    const { ExprIoEof } = await import('#testformats/ExprIoEof.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new ExprIoEof(io);
     assert.strictEqual(r.substream1.one, 1262698832);

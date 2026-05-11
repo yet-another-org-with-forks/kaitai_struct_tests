@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('RepeatUntilCalcArrayType', () => {
   it('parses test properly', async () => {
-    const { RepeatUntilCalcArrayType } = await import('../compiled/RepeatUntilCalcArrayType.js');
+    const { RepeatUntilCalcArrayType } = await import('#testformats/RepeatUntilCalcArrayType.js');
     const io = new KaitaiStream(fs.readFileSync('src/repeat_until_process.bin'));
     const r = new RepeatUntilCalcArrayType(io);
     assert.strictEqual(r.records.length, 3);

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('EnumDeepLiterals', () => {
   it('parses test properly', async () => {
-    const { EnumDeepLiterals } = await import('../compiled/EnumDeepLiterals.js');
+    const { EnumDeepLiterals } = await import('#testformats/EnumDeepLiterals.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_0.bin'));
     const r = new EnumDeepLiterals(io);
     assert.strictEqual(r.isPet1Ok, true);

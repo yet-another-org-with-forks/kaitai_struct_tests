@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ProcessToUser', () => {
   it('parses test properly', async () => {
-    const { ProcessToUser } = await import('../compiled/ProcessToUser.js');
+    const { ProcessToUser } = await import('#testformats/ProcessToUser.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_rotate.bin'));
     const r = new ProcessToUser(io);
     assert.strictEqual(r.buf1.str, "Hello");

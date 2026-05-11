@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprBytesCmp', () => {
   it('parses test properly', async () => {
-    const { ExprBytesCmp } = await import('../compiled/ExprBytesCmp.js');
+    const { ExprBytesCmp } = await import('#testformats/ExprBytesCmp.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new ExprBytesCmp(io);
     assert.deepStrictEqual(r.one, new Uint8Array([80]));

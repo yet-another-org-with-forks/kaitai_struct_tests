@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('NavParentVsValueInst', () => {
   it('parses test properly', async () => {
-    const { NavParentVsValueInst } = await import('../compiled/NavParentVsValueInst.js');
+    const { NavParentVsValueInst } = await import('#testformats/NavParentVsValueInst.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new NavParentVsValueInst(io);
     assert.strictEqual(r.s1, "foo");

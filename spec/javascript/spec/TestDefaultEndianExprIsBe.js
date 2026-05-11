@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('DefaultEndianExprIsBe', () => {
   it('parses test properly', async () => {
-    const { DefaultEndianExprIsBe } = await import('../compiled/DefaultEndianExprIsBe.js');
+    const { DefaultEndianExprIsBe } = await import('#testformats/DefaultEndianExprIsBe.js');
     const io = new KaitaiStream(fs.readFileSync('src/endian_expr.bin'));
     const r = new DefaultEndianExprIsBe(io);
     assert.deepStrictEqual(r.docs[0].indicator, new Uint8Array([73, 73]));

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('RepeatUntilComplex', () => {
   it('parses test properly', async () => {
-    const { RepeatUntilComplex } = await import('../compiled/RepeatUntilComplex.js');
+    const { RepeatUntilComplex } = await import('#testformats/RepeatUntilComplex.js');
     const io = new KaitaiStream(fs.readFileSync('src/repeat_until_complex.bin'));
     const r = new RepeatUntilComplex(io);
     assert.strictEqual(r.first.length, 3);

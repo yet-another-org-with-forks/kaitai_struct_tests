@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('NestedSameName', () => {
   it('parses test properly', async () => {
-    const { NestedSameName } = await import('../compiled/NestedSameName.js');
+    const { NestedSameName } = await import('#testformats/NestedSameName.js');
     const io = new KaitaiStream(fs.readFileSync('src/repeat_n_struct.bin'));
     const r = new NestedSameName(io);
     assert.strictEqual(r.mainData.mainSize, 2);

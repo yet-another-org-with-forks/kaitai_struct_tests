@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('DefaultEndianMod', () => {
   it('parses test properly', async () => {
-    const { DefaultEndianMod } = await import('../compiled/DefaultEndianMod.js');
+    const { DefaultEndianMod } = await import('#testformats/DefaultEndianMod.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new DefaultEndianMod(io);
     assert.strictEqual(r.main.one, 1262698832);

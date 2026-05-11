@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprSizeofType0', () => {
   it('parses test properly', async () => {
-    const { ExprSizeofType0 } = await import('../compiled/ExprSizeofType0.js');
+    const { ExprSizeofType0 } = await import('#testformats/ExprSizeofType0.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new ExprSizeofType0(io);
     assert.strictEqual(r.sizeofBlock, (1 + 4) + 2);

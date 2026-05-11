@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('SwitchMultiBoolOps', () => {
   it('parses test properly', async () => {
-    const { SwitchMultiBoolOps } = await import('../compiled/SwitchMultiBoolOps.js');
+    const { SwitchMultiBoolOps } = await import('#testformats/SwitchMultiBoolOps.js');
     const io = new KaitaiStream(fs.readFileSync('src/switch_integers.bin'));
     const r = new SwitchMultiBoolOps(io);
     assert.strictEqual(r.opcodes.length, 4);

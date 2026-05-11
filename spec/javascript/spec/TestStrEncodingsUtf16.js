@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('StrEncodingsUtf16', () => {
   it('parses test properly', async () => {
-    const { StrEncodingsUtf16 } = await import('../compiled/StrEncodingsUtf16.js');
+    const { StrEncodingsUtf16 } = await import('#testformats/StrEncodingsUtf16.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_encodings_utf16.bin'));
     const r = new StrEncodingsUtf16(io);
     assert.strictEqual(r.lenBe, 12);

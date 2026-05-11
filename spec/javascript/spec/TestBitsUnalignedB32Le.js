@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('BitsUnalignedB32Le', () => {
   it('parses test properly', async () => {
-    const { BitsUnalignedB32Le } = await import('../compiled/BitsUnalignedB32Le.js');
+    const { BitsUnalignedB32Le } = await import('#testformats/BitsUnalignedB32Le.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_xor_4.bin'));
     const r = new BitsUnalignedB32Le(io);
     assert.strictEqual(r.a, false);

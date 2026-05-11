@@ -4,7 +4,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('DebugArrayUserEofException', () => {
   it('parses test properly', async () => {
-    const { DebugArrayUserEofException } = await import('../compiled/DebugArrayUserEofException.js');
+    const { DebugArrayUserEofException } = await import('#testformats/DebugArrayUserEofException.js');
     const io = new KaitaiStream(fs.readFileSync('src/nav_parent_codes.bin'));
     const r = new DebugArrayUserEofException(io);
 

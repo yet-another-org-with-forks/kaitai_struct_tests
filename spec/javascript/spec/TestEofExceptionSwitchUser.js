@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('EofExceptionSwitchUser', () => {
   it('parses test properly', async () => {
-    const { EofExceptionSwitchUser } = await import('../compiled/EofExceptionSwitchUser.js');
+    const { EofExceptionSwitchUser } = await import('#testformats/EofExceptionSwitchUser.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_negative.bin'));
     assert.ok(KaitaiStream.EOFError);
     assert.throws(() => new EofExceptionSwitchUser(io), KaitaiStream.EOFError);

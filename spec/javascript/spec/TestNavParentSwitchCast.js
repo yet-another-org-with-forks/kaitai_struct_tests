@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('NavParentSwitchCast', () => {
   it('parses test properly', async () => {
-    const { NavParentSwitchCast } = await import('../compiled/NavParentSwitchCast.js');
+    const { NavParentSwitchCast } = await import('#testformats/NavParentSwitchCast.js');
     const io = new KaitaiStream(fs.readFileSync('src/switch_integers.bin'));
     const r = new NavParentSwitchCast(io);
     assert.strictEqual(r.main.bufType, 1);

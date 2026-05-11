@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprBytesOps', () => {
   it('parses test properly', async () => {
-    const { ExprBytesOps } = await import('../compiled/ExprBytesOps.js');
+    const { ExprBytesOps } = await import('#testformats/ExprBytesOps.js');
     const io = new KaitaiStream(fs.readFileSync('src/nav_parent_switch.bin'));
     const r = new ExprBytesOps(io);
     assert.strictEqual(r.oneSize, 3);

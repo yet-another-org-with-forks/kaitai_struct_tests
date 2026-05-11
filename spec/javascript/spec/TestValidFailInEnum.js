@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ValidFailInEnum', () => {
   it('parses test properly', async () => {
-    const { ValidFailInEnum } = await import('../compiled/ValidFailInEnum.js');
+    const { ValidFailInEnum } = await import('#testformats/ValidFailInEnum.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_0.bin'));
     assert.ok(KaitaiStream.ValidationNotInEnumError);
     assert.throws(() => new ValidFailInEnum(io), KaitaiStream.ValidationNotInEnumError);

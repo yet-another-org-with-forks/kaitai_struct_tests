@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('StrEosPadTermEqual', () => {
   it('parses test properly', async () => {
-    const { StrEosPadTermEqual } = await import('../compiled/StrEosPadTermEqual.js');
+    const { StrEosPadTermEqual } = await import('#testformats/StrEosPadTermEqual.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_pad_term.bin'));
     const r = new StrEosPadTermEqual(io);
     assert.strictEqual(r.s1.value, "str1");

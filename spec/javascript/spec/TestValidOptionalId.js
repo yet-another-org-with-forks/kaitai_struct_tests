@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ValidOptionalId', () => {
   it('parses test properly', async () => {
-    const { ValidOptionalId } = await import('../compiled/ValidOptionalId.js');
+    const { ValidOptionalId } = await import('#testformats/ValidOptionalId.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new ValidOptionalId(io);
   });

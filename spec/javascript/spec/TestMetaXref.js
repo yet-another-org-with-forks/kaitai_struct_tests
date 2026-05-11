@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('MetaXref', () => {
   it('parses test properly', async () => {
-    const { MetaXref } = await import('../compiled/MetaXref.js');
+    const { MetaXref } = await import('#testformats/MetaXref.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new MetaXref(io);
   });

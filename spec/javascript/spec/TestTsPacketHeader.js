@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('TsPacketHeader', () => {
   it('parses test properly', async () => {
-    const { TsPacketHeader } = await import('../compiled/TsPacketHeader.js');
+    const { TsPacketHeader } = await import('#testformats/TsPacketHeader.js');
     const io = new KaitaiStream(fs.readFileSync('src/ts_packet.bin'));
     const r = new TsPacketHeader(io);
     assert.strictEqual(r.syncByte, 71);

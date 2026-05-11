@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ProcessXor4Const', () => {
   it('parses test properly', async () => {
-    const { ProcessXor4Const } = await import('../compiled/ProcessXor4Const.js');
+    const { ProcessXor4Const } = await import('#testformats/ProcessXor4Const.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_xor_4.bin'));
     const r = new ProcessXor4Const(io);
     assert.deepStrictEqual(r.key, new Uint8Array([236, 187, 163, 20]));

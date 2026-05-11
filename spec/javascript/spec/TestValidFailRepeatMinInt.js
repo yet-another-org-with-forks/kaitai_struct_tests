@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ValidFailRepeatMinInt', () => {
   it('parses test properly', async () => {
-    const { ValidFailRepeatMinInt } = await import('../compiled/ValidFailRepeatMinInt.js');
+    const { ValidFailRepeatMinInt } = await import('#testformats/ValidFailRepeatMinInt.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_coerce_bytes.bin'));
     assert.ok(KaitaiStream.ValidationLessThanError);
     assert.throws(() => new ValidFailRepeatMinInt(io), KaitaiStream.ValidationLessThanError);

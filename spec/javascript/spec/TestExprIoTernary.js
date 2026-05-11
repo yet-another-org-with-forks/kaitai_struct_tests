@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprIoTernary', () => {
   it('parses test properly', async () => {
-    const { ExprIoTernary } = await import('../compiled/ExprIoTernary.js');
+    const { ExprIoTernary } = await import('#testformats/ExprIoTernary.js');
     const io = new KaitaiStream(fs.readFileSync('src/if_struct.bin'));
     const r = new ExprIoTernary(io);
     assert.strictEqual(r.oneOrTwoIoSize1, 8);

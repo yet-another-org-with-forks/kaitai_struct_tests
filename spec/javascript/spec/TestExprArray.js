@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprArray', () => {
   it('parses test properly', async () => {
-    const { ExprArray } = await import('../compiled/ExprArray.js');
+    const { ExprArray } = await import('#testformats/ExprArray.js');
     const io = new KaitaiStream(fs.readFileSync('src/expr_array.bin'));
     const r = new ExprArray(io);
     assert.strictEqual(r.aintSize, 4);

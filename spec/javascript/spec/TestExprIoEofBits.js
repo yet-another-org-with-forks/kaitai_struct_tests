@@ -4,7 +4,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprIoEofBits', () => {
   it('parses test properly', async () => {
-    const { ExprIoEofBits } = await import('../compiled/ExprIoEofBits.js');
+    const { ExprIoEofBits } = await import('#testformats/ExprIoEofBits.js');
     const io = new KaitaiStream(fs.readFileSync('src/nav_parent_switch.bin'));
     const r = new ExprIoEofBits(io);
 

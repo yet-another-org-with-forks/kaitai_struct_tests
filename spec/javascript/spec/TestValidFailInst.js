@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ValidFailInst', () => {
   it('parses test properly', async () => {
-    const { ValidFailInst } = await import('../compiled/ValidFailInst.js');
+    const { ValidFailInst } = await import('#testformats/ValidFailInst.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     assert.ok(KaitaiStream.ValidationNotEqualError);
     assert.throws(() => new ValidFailInst(io), KaitaiStream.ValidationNotEqualError);

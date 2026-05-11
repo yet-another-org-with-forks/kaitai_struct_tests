@@ -4,7 +4,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('DebugEnumName', () => {
   it('parses test properly', async () => {
-    const { DebugEnumName } = await import('../compiled/DebugEnumName.js');
+    const { DebugEnumName } = await import('#testformats/DebugEnumName.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new DebugEnumName(io);
 

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('YamlInts', () => {
   it('parses test properly', async () => {
-    const { YamlInts } = await import('../compiled/YamlInts.js');
+    const { YamlInts } = await import('#testformats/YamlInts.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new YamlInts(io);
     assert.strictEqual(r.testU4Dec, 4294967295);

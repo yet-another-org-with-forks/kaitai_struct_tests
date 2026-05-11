@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('NestedTypes', () => {
   it('parses test properly', async () => {
-    const { NestedTypes } = await import('../compiled/NestedTypes.js');
+    const { NestedTypes } = await import('#testformats/NestedTypes.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new NestedTypes(io);
     assert.strictEqual(r.one.typedAtRoot.valueB, 80);

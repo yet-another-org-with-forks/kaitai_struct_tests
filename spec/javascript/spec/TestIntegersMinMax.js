@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('IntegersMinMax', () => {
   it('parses test properly', async () => {
-    const { IntegersMinMax } = await import('../compiled/IntegersMinMax.js');
+    const { IntegersMinMax } = await import('#testformats/IntegersMinMax.js');
     const io = new KaitaiStream(fs.readFileSync('src/integers_min_max.bin'));
     const r = new IntegersMinMax(io);
     assert.strictEqual(r.unsignedMin.u1, 0);

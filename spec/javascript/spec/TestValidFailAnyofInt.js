@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ValidFailAnyofInt', () => {
   it('parses test properly', async () => {
-    const { ValidFailAnyofInt } = await import('../compiled/ValidFailAnyofInt.js');
+    const { ValidFailAnyofInt } = await import('#testformats/ValidFailAnyofInt.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     assert.ok(KaitaiStream.ValidationNotAnyOfError);
     assert.throws(() => new ValidFailAnyofInt(io), KaitaiStream.ValidationNotAnyOfError);

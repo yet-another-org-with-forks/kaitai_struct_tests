@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ProcessRepeatBytes', () => {
   it('parses test properly', async () => {
-    const { ProcessRepeatBytes } = await import('../compiled/ProcessRepeatBytes.js');
+    const { ProcessRepeatBytes } = await import('#testformats/ProcessRepeatBytes.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_xor_4.bin'));
     const r = new ProcessRepeatBytes(io);
     assert.deepStrictEqual(r.bufs[0], new Uint8Array([114, 37, 61, 138, 20]));

@@ -4,7 +4,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('DebugArrayUserCurrentExcluded', () => {
   it('parses test properly', async () => {
-    const { DebugArrayUserCurrentExcluded } = await import('../compiled/DebugArrayUserCurrentExcluded.js');
+    const { DebugArrayUserCurrentExcluded } = await import('#testformats/DebugArrayUserCurrentExcluded.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new DebugArrayUserCurrentExcluded(io);
 

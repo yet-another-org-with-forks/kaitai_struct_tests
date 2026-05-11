@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('DefaultBigEndian', () => {
   it('parses test properly', async () => {
-    const { DefaultBigEndian } = await import('../compiled/DefaultBigEndian.js');
+    const { DefaultBigEndian } = await import('#testformats/DefaultBigEndian.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_0.bin'));
     const r = new DefaultBigEndian(io);
     assert.strictEqual(r.one, 117440512);

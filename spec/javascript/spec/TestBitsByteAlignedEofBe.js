@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('BitsByteAlignedEofBe', () => {
   it('parses test properly', async () => {
-    const { BitsByteAlignedEofBe } = await import('../compiled/BitsByteAlignedEofBe.js');
+    const { BitsByteAlignedEofBe } = await import('#testformats/BitsByteAlignedEofBe.js');
     const io = new KaitaiStream(fs.readFileSync('src/bcd_user_type_be.bin'));
     const r = new BitsByteAlignedEofBe(io);
     assert.deepStrictEqual(r.prebuf, new Uint8Array([18, 52, 86, 120, 18, 52, 86, 120]));

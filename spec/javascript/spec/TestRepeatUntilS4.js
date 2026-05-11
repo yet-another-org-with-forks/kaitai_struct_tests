@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('RepeatUntilS4', () => {
   it('parses test properly', async () => {
-    const { RepeatUntilS4 } = await import('../compiled/RepeatUntilS4.js');
+    const { RepeatUntilS4 } = await import('#testformats/RepeatUntilS4.js');
     const io = new KaitaiStream(fs.readFileSync('src/repeat_until_s4.bin'));
     const r = new RepeatUntilS4(io);
     assert.deepStrictEqual(r.entries, [66, 4919, -251658241, -1]);

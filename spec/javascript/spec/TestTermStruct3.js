@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('TermStruct3', () => {
   it('parses test properly', async () => {
-    const { TermStruct3 } = await import('../compiled/TermStruct3.js');
+    const { TermStruct3 } = await import('#testformats/TermStruct3.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new TermStruct3(io);
     assert.deepStrictEqual(r.s1.value, new Uint8Array([102, 111, 111]));

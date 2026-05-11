@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('InstanceInSized', () => {
   it('parses test properly', async () => {
-    const { InstanceInSized } = await import('../compiled/InstanceInSized.js');
+    const { InstanceInSized } = await import('#testformats/InstanceInSized.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_rotate.bin'));
     const r = new InstanceInSized(io);
     assert.strictEqual(r.cont.seqSized.seqF, 9);

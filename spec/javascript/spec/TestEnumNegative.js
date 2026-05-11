@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('EnumNegative', () => {
   it('parses test properly', async () => {
-    const { EnumNegative } = await import('../compiled/EnumNegative.js');
+    const { EnumNegative } = await import('#testformats/EnumNegative.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_negative.bin'));
     const r = new EnumNegative(io);
     assert.strictEqual(r.f1, EnumNegative.Constants.NEGATIVE_ONE);

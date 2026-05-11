@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ValidSwitch', () => {
   it('parses test properly', async () => {
-    const { ValidSwitch } = await import('../compiled/ValidSwitch.js');
+    const { ValidSwitch } = await import('#testformats/ValidSwitch.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new ValidSwitch(io);
   });

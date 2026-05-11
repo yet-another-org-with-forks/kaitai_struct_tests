@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ParamsCall', () => {
   it('parses test properly', async () => {
-    const { ParamsCall } = await import('../compiled/ParamsCall.js');
+    const { ParamsCall } = await import('#testformats/ParamsCall.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new ParamsCall(io);
     assert.strictEqual(r.buf1.body, "foo|b");

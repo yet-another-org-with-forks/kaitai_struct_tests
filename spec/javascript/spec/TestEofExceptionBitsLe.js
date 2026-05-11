@@ -4,7 +4,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('EofExceptionBitsLe', () => {
   it('parses test properly', async () => {
-    const { EofExceptionBitsLe } = await import('../compiled/EofExceptionBitsLe.js');
+    const { EofExceptionBitsLe } = await import('#testformats/EofExceptionBitsLe.js');
     const io = new KaitaiStream(fs.readFileSync('src/nav_parent_switch.bin'));
     assert.ok(KaitaiStream.EOFError);
     assert.throws(() => new EofExceptionBitsLe(io)._read(), KaitaiStream.EOFError);

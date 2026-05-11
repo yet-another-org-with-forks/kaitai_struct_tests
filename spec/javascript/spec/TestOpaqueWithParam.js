@@ -4,7 +4,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('OpaqueWithParam', () => {
   it('parses test properly', async () => {
-    const { OpaqueWithParam } = await import('../compiled/OpaqueWithParam.js');
+    const { OpaqueWithParam } = await import('#testformats/OpaqueWithParam.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new OpaqueWithParam(io);
     assert.strictEqual(r.one.buf, 'foo|b');

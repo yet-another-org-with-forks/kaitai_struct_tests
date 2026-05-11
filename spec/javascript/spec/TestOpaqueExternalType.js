@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('OpaqueExternalType', () => {
   it('parses test properly', async () => {
-    const { OpaqueExternalType } = await import('../compiled/OpaqueExternalType.js');
+    const { OpaqueExternalType } = await import('#testformats/OpaqueExternalType.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new OpaqueExternalType(io);
     assert.strictEqual(r.hw.one, 102);

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ImportsCastToImported', () => {
   it('parses test properly', async () => {
-    const { ImportsCastToImported } = await import('../compiled/ImportsCastToImported.js');
+    const { ImportsCastToImported } = await import('#testformats/ImportsCastToImported.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_xor_4.bin'));
     const r = new ImportsCastToImported(io);
     assert.strictEqual(r.hw.one, 236);

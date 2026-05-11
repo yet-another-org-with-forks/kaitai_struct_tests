@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('MultipleUse', () => {
   it('parses test properly', async () => {
-    const { MultipleUse } = await import('../compiled/MultipleUse.js');
+    const { MultipleUse } = await import('#testformats/MultipleUse.js');
     const io = new KaitaiStream(fs.readFileSync('src/position_abs.bin'));
     const r = new MultipleUse(io);
     assert.strictEqual(r.t1.firstUse.value, 32);

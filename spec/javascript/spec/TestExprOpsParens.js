@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprOpsParens', () => {
   it('parses test properly', async () => {
-    const { ExprOpsParens } = await import('../compiled/ExprOpsParens.js');
+    const { ExprOpsParens } = await import('#testformats/ExprOpsParens.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_negative.bin'));
     const r = new ExprOpsParens(io);
     assert.strictEqual(r.iSumToStr, "29");

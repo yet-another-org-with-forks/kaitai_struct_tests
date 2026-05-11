@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('Expr1', () => {
   it('parses test properly', async () => {
-    const { Expr1 } = await import('../compiled/Expr1.js');
+    const { Expr1 } = await import('#testformats/Expr1.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_encodings.bin'));
     const r = new Expr1(io);
     assert.strictEqual(r.lenOf1, 10);

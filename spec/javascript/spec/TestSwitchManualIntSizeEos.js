@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('SwitchManualIntSizeEos', () => {
   it('parses test properly', async () => {
-    const { SwitchManualIntSizeEos } = await import('../compiled/SwitchManualIntSizeEos.js');
+    const { SwitchManualIntSizeEos } = await import('#testformats/SwitchManualIntSizeEos.js');
     const io = new KaitaiStream(fs.readFileSync('src/switch_tlv.bin'));
     const r = new SwitchManualIntSizeEos(io);
     assert.strictEqual(r.chunks.length, 4);

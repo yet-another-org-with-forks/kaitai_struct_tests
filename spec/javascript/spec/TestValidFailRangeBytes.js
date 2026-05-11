@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ValidFailRangeBytes', () => {
   it('parses test properly', async () => {
-    const { ValidFailRangeBytes } = await import('../compiled/ValidFailRangeBytes.js');
+    const { ValidFailRangeBytes } = await import('#testformats/ValidFailRangeBytes.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     assert.ok(KaitaiStream.ValidationGreaterThanError);
     assert.throws(() => new ValidFailRangeBytes(io), KaitaiStream.ValidationGreaterThanError);

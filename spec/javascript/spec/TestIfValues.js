@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('IfValues', () => {
   it('parses test properly', async () => {
-    const { IfValues } = await import('../compiled/IfValues.js');
+    const { IfValues } = await import('#testformats/IfValues.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new IfValues(io);
     assert.strictEqual(r.codes[0].opcode, 80);

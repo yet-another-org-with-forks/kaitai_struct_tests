@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('SwitchIntegers2', () => {
   it('parses test properly', async () => {
-    const { SwitchIntegers2 } = await import('../compiled/SwitchIntegers2.js');
+    const { SwitchIntegers2 } = await import('#testformats/SwitchIntegers2.js');
     const io = new KaitaiStream(fs.readFileSync('src/switch_integers.bin'));
     const r = new SwitchIntegers2(io);
     assert.strictEqual(r.code, 1);

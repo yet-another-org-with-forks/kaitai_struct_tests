@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('BitsShiftByB32Le', () => {
   it('parses test properly', async () => {
-    const { BitsShiftByB32Le } = await import('../compiled/BitsShiftByB32Le.js');
+    const { BitsShiftByB32Le } = await import('#testformats/BitsShiftByB32Le.js');
     const io = new KaitaiStream(fs.readFileSync('src/bits_shift_by_b32_le.bin'));
     const r = new BitsShiftByB32Le(io);
     assert.strictEqual(r.a, 4294967295);

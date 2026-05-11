@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('CastNested', () => {
   it('parses test properly', async () => {
-    const { CastNested } = await import('../compiled/CastNested.js');
+    const { CastNested } = await import('#testformats/CastNested.js');
     const io = new KaitaiStream(fs.readFileSync('src/switch_opcodes.bin'));
     const r = new CastNested(io);
     assert.strictEqual(r.opcodes0Str.value, "foobar");

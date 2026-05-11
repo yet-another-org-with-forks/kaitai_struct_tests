@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('RepeatEosBitsB4', () => {
   it('parses test properly', async () => {
-    const { RepeatEosBitsB4 } = await import('../compiled/RepeatEosBitsB4.js');
+    const { RepeatEosBitsB4 } = await import('#testformats/RepeatEosBitsB4.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_negative.bin'));
     const r = new RepeatEosBitsB4(io);
     assert.strictEqual(r.nibbles.length, 4);

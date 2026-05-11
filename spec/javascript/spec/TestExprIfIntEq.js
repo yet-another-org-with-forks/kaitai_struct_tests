@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprIfIntEq', () => {
   it('parses test properly', async () => {
-    const { ExprIfIntEq } = await import('../compiled/ExprIfIntEq.js');
+    const { ExprIfIntEq } = await import('#testformats/ExprIfIntEq.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_coerce_switch.bin'));
     const r = new ExprIfIntEq(io);
     assert.strictEqual(r.seqEqLit, true);

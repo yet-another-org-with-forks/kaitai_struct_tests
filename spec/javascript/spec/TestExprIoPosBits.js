@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprIoPosBits', () => {
   it('parses test properly', async () => {
-    const { ExprIoPosBits } = await import('../compiled/ExprIoPosBits.js');
+    const { ExprIoPosBits } = await import('#testformats/ExprIoPosBits.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_xor_4.bin'));
     const r = new ExprIoPosBits(io);
     assert.strictEqual(r.foo, 7);

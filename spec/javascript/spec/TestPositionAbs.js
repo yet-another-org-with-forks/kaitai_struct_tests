@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('PositionAbs', () => {
   it('parses test properly', async () => {
-    const { PositionAbs } = await import('../compiled/PositionAbs.js');
+    const { PositionAbs } = await import('#testformats/PositionAbs.js');
     const io = new KaitaiStream(fs.readFileSync('src/position_abs.bin'));
     const r = new PositionAbs(io);
     assert.strictEqual(r.indexOffset, 32);

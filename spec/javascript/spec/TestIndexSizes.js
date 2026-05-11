@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('IndexSizes', () => {
   it('parses test properly', async () => {
-    const { IndexSizes } = await import('../compiled/IndexSizes.js');
+    const { IndexSizes } = await import('#testformats/IndexSizes.js');
     const io = new KaitaiStream(fs.readFileSync('src/index_sizes.bin'));
     const r = new IndexSizes(io);
     assert.strictEqual(r.qty, 3);

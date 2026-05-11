@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('DefaultEndianExprException', () => {
   it('parses test properly', async () => {
-    const { DefaultEndianExprException } = await import('../compiled/DefaultEndianExprException.js');
+    const { DefaultEndianExprException } = await import('#testformats/DefaultEndianExprException.js');
     const io = new KaitaiStream(fs.readFileSync('src/endian_expr.bin'));
     assert.ok(KaitaiStream.UndecidedEndiannessError);
     assert.throws(() => new DefaultEndianExprException(io), KaitaiStream.UndecidedEndiannessError);

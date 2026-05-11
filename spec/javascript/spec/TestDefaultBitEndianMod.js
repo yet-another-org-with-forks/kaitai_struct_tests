@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('DefaultBitEndianMod', () => {
   it('parses test properly', async () => {
-    const { DefaultBitEndianMod } = await import('../compiled/DefaultBitEndianMod.js');
+    const { DefaultBitEndianMod } = await import('#testformats/DefaultBitEndianMod.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new DefaultBitEndianMod(io);
     assert.strictEqual(r.main.one, 336);

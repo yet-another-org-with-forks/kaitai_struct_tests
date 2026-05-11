@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('StrPadTermUtf16', () => {
   it('parses test properly', async () => {
-    const { StrPadTermUtf16 } = await import('../compiled/StrPadTermUtf16.js');
+    const { StrPadTermUtf16 } = await import('#testformats/StrPadTermUtf16.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_pad_term_utf16.bin'));
     const r = new StrPadTermUtf16(io);
     assert.strictEqual(r.strTerm, "a\u0200b");

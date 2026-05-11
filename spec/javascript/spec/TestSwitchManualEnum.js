@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('SwitchManualEnum', () => {
   it('parses test properly', async () => {
-    const { SwitchManualEnum } = await import('../compiled/SwitchManualEnum.js');
+    const { SwitchManualEnum } = await import('#testformats/SwitchManualEnum.js');
     const io = new KaitaiStream(fs.readFileSync('src/switch_opcodes.bin'));
     const r = new SwitchManualEnum(io);
     assert.strictEqual(r.opcodes.length, 4);

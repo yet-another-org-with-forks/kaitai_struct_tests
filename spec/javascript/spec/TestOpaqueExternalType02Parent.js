@@ -4,7 +4,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('OpaqueExternalType02Parent', () => {
 	it('parses test properly', async () => {
-		const { OpaqueExternalType02Parent } = await import('../compiled/OpaqueExternalType02Parent.js');
+		const { OpaqueExternalType02Parent } = await import('#testformats/OpaqueExternalType02Parent.js');
 		const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
 		const r = new OpaqueExternalType02Parent(io);
 		assert.strictEqual(r.parent.child.s1, "foo");

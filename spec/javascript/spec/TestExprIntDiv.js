@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprIntDiv', () => {
   it('parses test properly', async () => {
-    const { ExprIntDiv } = await import('../compiled/ExprIntDiv.js');
+    const { ExprIntDiv } = await import('#testformats/ExprIntDiv.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new ExprIntDiv(io);
     assert.strictEqual(r.intU, 1262698832);

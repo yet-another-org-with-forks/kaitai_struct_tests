@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('IoLocalVar', () => {
   it('parses test properly', async () => {
-    const { IoLocalVar } = await import('../compiled/IoLocalVar.js');
+    const { IoLocalVar } = await import('#testformats/IoLocalVar.js');
     const io = new KaitaiStream(fs.readFileSync('src/full256.bin'));
     const r = new IoLocalVar(io);
     assert.deepStrictEqual(r.skip, new Uint8Array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]));

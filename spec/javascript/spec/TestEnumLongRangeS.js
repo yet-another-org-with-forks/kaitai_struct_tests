@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('EnumLongRangeS', () => {
   it('parses test properly', async () => {
-    const { EnumLongRangeS } = await import('../compiled/EnumLongRangeS.js');
+    const { EnumLongRangeS } = await import('#testformats/EnumLongRangeS.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_long_range_s.bin'));
     const r = new EnumLongRangeS(io);
     assert.strictEqual(r.f1, EnumLongRangeS.Constants.LONG_MIN);

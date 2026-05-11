@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('NonStandard', () => {
   it('parses test properly', async () => {
-    const { NonStandard } = await import('../compiled/NonStandard.js');
+    const { NonStandard } = await import('#testformats/NonStandard.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new NonStandard(io);
     assert.strictEqual(r.foo, 80);

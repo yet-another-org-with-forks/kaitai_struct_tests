@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprIfIntOps', () => {
   it('parses test properly', async () => {
-    const { ExprIfIntOps } = await import('../compiled/ExprIfIntOps.js');
+    const { ExprIfIntOps } = await import('#testformats/ExprIfIntOps.js');
     const io = new KaitaiStream(fs.readFileSync('src/instance_io.bin'));
     const r = new ExprIfIntOps(io);
     assert.strictEqual(r.key, 3);

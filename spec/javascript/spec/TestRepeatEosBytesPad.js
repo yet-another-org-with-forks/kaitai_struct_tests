@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('RepeatEosBytesPad', () => {
   it('parses test properly', async () => {
-    const { RepeatEosBytesPad } = await import('../compiled/RepeatEosBytesPad.js');
+    const { RepeatEosBytesPad } = await import('#testformats/RepeatEosBytesPad.js');
     const io = new KaitaiStream(fs.readFileSync('src/repeat_until_process.bin'));
     const r = new RepeatEosBytesPad(io);
     assert.strictEqual(r.records.length, 3);

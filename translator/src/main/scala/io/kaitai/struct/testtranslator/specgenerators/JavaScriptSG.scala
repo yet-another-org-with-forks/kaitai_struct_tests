@@ -41,10 +41,10 @@ class JavaScriptSG(spec: TestSpec, provider: ClassTypeProvider) extends BaseGene
     out.inc
     out.puts("it('parses test properly', async () => {")
     out.inc
-    out.puts(s"const { $className } = await import('../compiled/$className.js');")
+    out.puts(s"const { $className } = await import('#testformats/$className.js');")
     spec.extraImports.foreach { (entry) =>
       val entryClass = JavaScriptCompiler.type2class(entry)
-      out.puts(s"const { $entryClass } = await import('../compiled/$entryClass.js');")
+      out.puts(s"const { $entryClass } = await import('#testformats/$entryClass.js');")
     }
   }
 

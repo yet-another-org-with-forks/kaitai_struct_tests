@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('PositionInSeq', () => {
   it('parses test properly', async () => {
-    const { PositionInSeq } = await import('../compiled/PositionInSeq.js');
+    const { PositionInSeq } = await import('#testformats/PositionInSeq.js');
     const io = new KaitaiStream(fs.readFileSync('src/position_in_seq.bin'));
     const r = new PositionInSeq(io);
     assert.deepStrictEqual(r.numbers, [0 + 1, 2, 3]);

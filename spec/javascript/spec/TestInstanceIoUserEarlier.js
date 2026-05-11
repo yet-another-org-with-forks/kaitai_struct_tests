@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('InstanceIoUserEarlier', () => {
   it('parses test properly', async () => {
-    const { InstanceIoUserEarlier } = await import('../compiled/InstanceIoUserEarlier.js');
+    const { InstanceIoUserEarlier } = await import('#testformats/InstanceIoUserEarlier.js');
     const io = new KaitaiStream(fs.readFileSync('src/switch_opcodes2.bin'));
     const r = new InstanceIoUserEarlier(io);
     assert.strictEqual(r.sizedA.content, 83);

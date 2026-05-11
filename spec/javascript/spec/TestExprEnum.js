@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprEnum', () => {
   it('parses test properly', async () => {
-    const { ExprEnum } = await import('../compiled/ExprEnum.js');
+    const { ExprEnum } = await import('#testformats/ExprEnum.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new ExprEnum(io);
     assert.strictEqual(r.constDog, ExprEnum.Animal.DOG);

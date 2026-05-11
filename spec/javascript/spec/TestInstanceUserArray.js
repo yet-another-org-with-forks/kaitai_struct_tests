@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('InstanceUserArray', () => {
   it('parses test properly', async () => {
-    const { InstanceUserArray } = await import('../compiled/InstanceUserArray.js');
+    const { InstanceUserArray } = await import('#testformats/InstanceUserArray.js');
     const io = new KaitaiStream(fs.readFileSync('src/instance_std_array.bin'));
     const r = new InstanceUserArray(io);
     assert.strictEqual(r.ofs, 16);

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ValidFailRangeFloat', () => {
   it('parses test properly', async () => {
-    const { ValidFailRangeFloat } = await import('../compiled/ValidFailRangeFloat.js');
+    const { ValidFailRangeFloat } = await import('#testformats/ValidFailRangeFloat.js');
     const io = new KaitaiStream(fs.readFileSync('src/floating_points.bin'));
     assert.ok(KaitaiStream.ValidationGreaterThanError);
     assert.throws(() => new ValidFailRangeFloat(io), KaitaiStream.ValidationGreaterThanError);

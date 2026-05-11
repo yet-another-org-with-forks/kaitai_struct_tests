@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('SwitchManualEnumInvalidElse', () => {
   it('parses test properly', async () => {
-    const { SwitchManualEnumInvalidElse } = await import('../compiled/SwitchManualEnumInvalidElse.js');
+    const { SwitchManualEnumInvalidElse } = await import('#testformats/SwitchManualEnumInvalidElse.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_negative.bin'));
     const r = new SwitchManualEnumInvalidElse(io);
     assert.strictEqual(r.opcodes.length, 2);

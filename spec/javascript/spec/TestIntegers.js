@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('Integers', () => {
   it('parses test properly', async () => {
-    const { Integers } = await import('../compiled/Integers.js');
+    const { Integers } = await import('#testformats/Integers.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new Integers(io);
     assert.strictEqual(r.uint8, 255);

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprFstring0', () => {
   it('parses test properly', async () => {
-    const { ExprFstring0 } = await import('../compiled/ExprFstring0.js');
+    const { ExprFstring0 } = await import('#testformats/ExprFstring0.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new ExprFstring0(io);
     assert.strictEqual(r.seqStr, "foo|b");

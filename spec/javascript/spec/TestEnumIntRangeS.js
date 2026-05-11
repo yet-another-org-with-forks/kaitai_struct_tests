@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('EnumIntRangeS', () => {
   it('parses test properly', async () => {
-    const { EnumIntRangeS } = await import('../compiled/EnumIntRangeS.js');
+    const { EnumIntRangeS } = await import('#testformats/EnumIntRangeS.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_int_range_s.bin'));
     const r = new EnumIntRangeS(io);
     assert.strictEqual(r.f1, EnumIntRangeS.Constants.INT_MIN);

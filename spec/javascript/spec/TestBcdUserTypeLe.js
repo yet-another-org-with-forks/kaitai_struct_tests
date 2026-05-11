@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('BcdUserTypeLe', () => {
   it('parses test properly', async () => {
-    const { BcdUserTypeLe } = await import('../compiled/BcdUserTypeLe.js');
+    const { BcdUserTypeLe } = await import('#testformats/BcdUserTypeLe.js');
     const io = new KaitaiStream(fs.readFileSync('src/bcd_user_type_le.bin'));
     const r = new BcdUserTypeLe(io);
     assert.strictEqual(r.ltr.asInt, 12345678);

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('SwitchRepeatExpr', () => {
   it('parses test properly', async () => {
-    const { SwitchRepeatExpr } = await import('../compiled/SwitchRepeatExpr.js');
+    const { SwitchRepeatExpr } = await import('#testformats/SwitchRepeatExpr.js');
     const io = new KaitaiStream(fs.readFileSync('src/switch_integers.bin'));
     const r = new SwitchRepeatExpr(io);
     assert.strictEqual(r.codes.length, 3);

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('TypeIntUnaryOp', () => {
   it('parses test properly', async () => {
-    const { TypeIntUnaryOp } = await import('../compiled/TypeIntUnaryOp.js');
+    const { TypeIntUnaryOp } = await import('#testformats/TypeIntUnaryOp.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new TypeIntUnaryOp(io);
     assert.strictEqual(r.valueS2, 16720);

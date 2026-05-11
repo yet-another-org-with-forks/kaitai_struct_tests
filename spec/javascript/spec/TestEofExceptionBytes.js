@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('EofExceptionBytes', () => {
   it('parses test properly', async () => {
-    const { EofExceptionBytes } = await import('../compiled/EofExceptionBytes.js');
+    const { EofExceptionBytes } = await import('#testformats/EofExceptionBytes.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     assert.ok(KaitaiStream.EOFError);
     assert.throws(() => new EofExceptionBytes(io), KaitaiStream.EOFError);

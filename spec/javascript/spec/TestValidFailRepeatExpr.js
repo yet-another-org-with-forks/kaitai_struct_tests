@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ValidFailRepeatExpr', () => {
   it('parses test properly', async () => {
-    const { ValidFailRepeatExpr } = await import('../compiled/ValidFailRepeatExpr.js');
+    const { ValidFailRepeatExpr } = await import('#testformats/ValidFailRepeatExpr.js');
     const io = new KaitaiStream(fs.readFileSync('src/bcd_user_type_be.bin'));
     assert.ok(KaitaiStream.ValidationExprError);
     assert.throws(() => new ValidFailRepeatExpr(io), KaitaiStream.ValidationExprError);

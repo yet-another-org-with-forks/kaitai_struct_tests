@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ValidLong', () => {
   it('parses test properly', async () => {
-    const { ValidLong } = await import('../compiled/ValidLong.js');
+    const { ValidLong } = await import('#testformats/ValidLong.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new ValidLong(io);
   });

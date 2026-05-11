@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('NavRoot', () => {
   it('parses test properly', async () => {
-    const { NavRoot } = await import('../compiled/NavRoot.js');
+    const { NavRoot } = await import('#testformats/NavRoot.js');
     const io = new KaitaiStream(fs.readFileSync('src/nav.bin'));
     const r = new NavRoot(io);
     assert.strictEqual(r.header.qtyEntries, 2);

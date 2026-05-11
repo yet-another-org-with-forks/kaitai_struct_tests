@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('StrPadTermEmpty', () => {
   it('parses test properly', async () => {
-    const { StrPadTermEmpty } = await import('../compiled/StrPadTermEmpty.js');
+    const { StrPadTermEmpty } = await import('#testformats/StrPadTermEmpty.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_pad_term_empty.bin'));
     const r = new StrPadTermEmpty(io);
     assert.strictEqual(r.strPad, "");

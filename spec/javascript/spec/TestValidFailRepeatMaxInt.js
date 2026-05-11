@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ValidFailRepeatMaxInt', () => {
   it('parses test properly', async () => {
-    const { ValidFailRepeatMaxInt } = await import('../compiled/ValidFailRepeatMaxInt.js');
+    const { ValidFailRepeatMaxInt } = await import('#testformats/ValidFailRepeatMaxInt.js');
     const io = new KaitaiStream(fs.readFileSync('src/nav_parent_switch.bin'));
     assert.ok(KaitaiStream.ValidationGreaterThanError);
     assert.throws(() => new ValidFailRepeatMaxInt(io), KaitaiStream.ValidationGreaterThanError);

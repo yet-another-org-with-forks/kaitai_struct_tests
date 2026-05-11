@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprSizeofValueSized', () => {
   it('parses test properly', async () => {
-    const { ExprSizeofValueSized } = await import('../compiled/ExprSizeofValueSized.js');
+    const { ExprSizeofValueSized } = await import('#testformats/ExprSizeofValueSized.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new ExprSizeofValueSized(io);
     assert.strictEqual(r.selfSizeof, 12 + 2);

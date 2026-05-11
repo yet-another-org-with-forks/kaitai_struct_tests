@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('RepeatNTermStruct', () => {
   it('parses test properly', async () => {
-    const { RepeatNTermStruct } = await import('../compiled/RepeatNTermStruct.js');
+    const { RepeatNTermStruct } = await import('#testformats/RepeatNTermStruct.js');
     const io = new KaitaiStream(fs.readFileSync('src/repeat_until_process.bin'));
     const r = new RepeatNTermStruct(io);
     assert.strictEqual(r.records1.length, 2);

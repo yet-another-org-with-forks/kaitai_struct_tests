@@ -6,9 +6,9 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ImportsParamsDefEnumImported', () => {
   it('parses test properly', async () => {
-    const { ImportsParamsDefEnumImported } = await import('../compiled/ImportsParamsDefEnumImported.js');
-    const { Enum0 } = await import('../compiled/Enum0.js');
-    const { EnumDeep } = await import('../compiled/EnumDeep.js');
+    const { ImportsParamsDefEnumImported } = await import('#testformats/ImportsParamsDefEnumImported.js');
+    const { Enum0 } = await import('#testformats/Enum0.js');
+    const { EnumDeep } = await import('#testformats/EnumDeep.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_0.bin'));
     const r = new ImportsParamsDefEnumImported(io);
     assert.strictEqual(r.one.pet1, Enum0.Animal.CAT);

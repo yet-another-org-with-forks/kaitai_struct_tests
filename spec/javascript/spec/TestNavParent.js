@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('NavParent', () => {
   it('parses test properly', async () => {
-    const { NavParent } = await import('../compiled/NavParent.js');
+    const { NavParent } = await import('#testformats/NavParent.js');
     const io = new KaitaiStream(fs.readFileSync('src/nav.bin'));
     const r = new NavParent(io);
     assert.strictEqual(r.header.qtyEntries, 2);

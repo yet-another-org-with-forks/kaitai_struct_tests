@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ProcessRepeatUsertypeDynargXor', () => {
   it('parses test properly', async () => {
-    const { ProcessRepeatUsertypeDynargXor } = await import('../compiled/ProcessRepeatUsertypeDynargXor.js');
+    const { ProcessRepeatUsertypeDynargXor } = await import('#testformats/ProcessRepeatUsertypeDynargXor.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_xor_4.bin'));
     const r = new ProcessRepeatUsertypeDynargXor(io);
     assert.strictEqual(r.blocks[0].a, 2319263090);

@@ -4,7 +4,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('Debug0', () => {
   it('parses test properly', async () => {
-    const { Debug0 } = await import('../compiled/Debug0.js');
+    const { Debug0 } = await import('#testformats/Debug0.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new Debug0(io);
 

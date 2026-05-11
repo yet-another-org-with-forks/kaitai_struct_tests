@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ProcessRepeatUsertypeDynargRotate', () => {
   it('parses test properly', async () => {
-    const { ProcessRepeatUsertypeDynargRotate } = await import('../compiled/ProcessRepeatUsertypeDynargRotate.js');
+    const { ProcessRepeatUsertypeDynargRotate } = await import('#testformats/ProcessRepeatUsertypeDynargRotate.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_rotate.bin'));
     const r = new ProcessRepeatUsertypeDynargRotate(io);
     assert.strictEqual(r.blocksRol[0].a, 25928);

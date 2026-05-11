@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ProcessRepeatUsertype', () => {
   it('parses test properly', async () => {
-    const { ProcessRepeatUsertype } = await import('../compiled/ProcessRepeatUsertype.js');
+    const { ProcessRepeatUsertype } = await import('#testformats/ProcessRepeatUsertype.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_xor_4.bin'));
     const r = new ProcessRepeatUsertype(io);
     assert.strictEqual(r.blocks[0].a, -1975704206);

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('CombineBool', () => {
   it('parses test properly', async () => {
-    const { CombineBool } = await import('../compiled/CombineBool.js');
+    const { CombineBool } = await import('#testformats/CombineBool.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_negative.bin'));
     const r = new CombineBool(io);
     assert.strictEqual(r.boolBit, true);

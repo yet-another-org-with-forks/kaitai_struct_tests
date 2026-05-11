@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('IntegersDoubleOverflow', () => {
   it('parses test properly', async () => {
-    const { IntegersDoubleOverflow } = await import('../compiled/IntegersDoubleOverflow.js');
+    const { IntegersDoubleOverflow } = await import('#testformats/IntegersDoubleOverflow.js');
     const io = new KaitaiStream(fs.readFileSync('src/integers_double_overflow.bin'));
     const r = new IntegersDoubleOverflow(io);
     assert.strictEqual(r.signedSafeMinBe, -9007199254740991);

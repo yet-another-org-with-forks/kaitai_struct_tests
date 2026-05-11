@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('StrEos', () => {
   it('parses test properly', async () => {
-    const { StrEos } = await import('../compiled/StrEos.js');
+    const { StrEos } = await import('#testformats/StrEos.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new StrEos(io);
     assert.strictEqual(r.str, "foo|bar|baz@");

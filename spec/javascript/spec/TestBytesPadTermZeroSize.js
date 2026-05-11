@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('BytesPadTermZeroSize', () => {
   it('parses test properly', async () => {
-    const { BytesPadTermZeroSize } = await import('../compiled/BytesPadTermZeroSize.js');
+    const { BytesPadTermZeroSize } = await import('#testformats/BytesPadTermZeroSize.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_negative.bin'));
     const r = new BytesPadTermZeroSize(io);
     assert.deepStrictEqual(r.strPad, new Uint8Array([]));

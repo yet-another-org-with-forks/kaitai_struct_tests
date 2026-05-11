@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ParamsPassArrayUsertype', () => {
   it('parses test properly', async () => {
-    const { ParamsPassArrayUsertype } = await import('../compiled/ParamsPassArrayUsertype.js');
+    const { ParamsPassArrayUsertype } = await import('#testformats/ParamsPassArrayUsertype.js');
     const io = new KaitaiStream(fs.readFileSync('src/position_to_end.bin'));
     const r = new ParamsPassArrayUsertype(io);
     assert.strictEqual(r.passBlocks.bar.length, 2);

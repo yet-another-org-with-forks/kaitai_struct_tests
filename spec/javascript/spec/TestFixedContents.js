@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('FixedContents', () => {
   it('parses test properly', async () => {
-    const { FixedContents } = await import('../compiled/FixedContents.js');
+    const { FixedContents } = await import('#testformats/FixedContents.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new FixedContents(io);
   });

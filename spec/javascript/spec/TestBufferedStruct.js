@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('BufferedStruct', () => {
   it('parses test properly', async () => {
-    const { BufferedStruct } = await import('../compiled/BufferedStruct.js');
+    const { BufferedStruct } = await import('#testformats/BufferedStruct.js');
     const io = new KaitaiStream(fs.readFileSync('src/buffered_struct.bin'));
     const r = new BufferedStruct(io);
     assert.strictEqual(r.len1, 16);

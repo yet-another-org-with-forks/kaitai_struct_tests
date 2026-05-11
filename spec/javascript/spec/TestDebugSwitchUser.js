@@ -4,7 +4,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('DebugSwitchUser', () => {
   it('parses test properly', async () => {
-    const { DebugSwitchUser } = await import('../compiled/DebugSwitchUser.js');
+    const { DebugSwitchUser } = await import('#testformats/DebugSwitchUser.js');
     const io = new KaitaiStream(fs.readFileSync('src/nav_parent_switch.bin'));
     const r = new DebugSwitchUser(io);
 

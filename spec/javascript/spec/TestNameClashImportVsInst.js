@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('NameClashImportVsInst', () => {
   it('parses test properly', async () => {
-    const { NameClashImportVsInst } = await import('../compiled/NameClashImportVsInst.js');
+    const { NameClashImportVsInst } = await import('#testformats/NameClashImportVsInst.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new NameClashImportVsInst(io);
     assert.strictEqual(r.integers.uint8, 255);

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('JsSignedRightShift', () => {
   it('parses test properly', async () => {
-    const { JsSignedRightShift } = await import('../compiled/JsSignedRightShift.js');
+    const { JsSignedRightShift } = await import('#testformats/JsSignedRightShift.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new JsSignedRightShift(io);
     assert.strictEqual(r.shouldBe40000000, 1073741824);

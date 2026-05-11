@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ZlibWithHeader78', () => {
   it('parses test properly', async () => {
-    const { ZlibWithHeader78 } = await import('../compiled/ZlibWithHeader78.js');
+    const { ZlibWithHeader78 } = await import('#testformats/ZlibWithHeader78.js');
     const io = new KaitaiStream(fs.readFileSync('src/zlib_with_header_78.bin'));
     const r = new ZlibWithHeader78(io);
     assert.deepStrictEqual(r.data, new Uint8Array([97, 32, 113, 117, 105, 99, 107, 32, 98, 114, 111, 119, 110, 32, 102, 111, 120, 32, 106, 117, 109, 112, 115, 32, 111, 118, 101, 114]));

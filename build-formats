@@ -25,8 +25,8 @@ mkdir -p "$OUTPUT_DIR"
 	--go-package test_formats \
 	--nim-module "kaitai_struct_nim_runtime" \
 	--nim-opaque "../../tests/spec/nim/opaque/" \
-	--javascript-opaque "../opaque/" \
-	--typescript-opaque "../opaque/" \
+	--javascript-opaque "../../opaque/" \
+	--typescript-opaque "../../opaque/" \
 	"$FORMATS_KSY_DIR"/*.ksy || :
 
 if [ "$TARGET" = java ] || [ "$TARGET" = all ]; then
@@ -60,4 +60,34 @@ if [ "$TARGET" = python ] || [ "$TARGET" = all ]; then
 
 	# See the comment above about why we are creating this empty `__init__.py` file.
 	touch "$FORMATS_COMPILED_DIR/python/testwrite/__init__.py"
+fi
+
+if [ "$TARGET" = javascript ] || [ "$TARGET" = all ]; then
+	mv -n "$FORMATS_COMPILED_DIR/javascript" "$FORMATS_COMPILED_DIR/javascript-tmp"
+	mkdir "$FORMATS_COMPILED_DIR/javascript"
+	mv -n "$FORMATS_COMPILED_DIR/javascript-tmp" "$FORMATS_COMPILED_DIR/javascript/testformats"
+
+	"$COMPILER_DIR/jvm/target/universal/stage/bin/kaitai-struct-compiler" -- \
+		--verbose file -t javascript -d "$FORMATS_COMPILED_DIR/javascript/testwrite" \
+		--no-auto-read \
+		--read-write \
+		--import-path "$FORMATS_REPO_DIR" \
+		--import-path "$FORMATS_KSY_DIR/ks_path" \
+		--javascript-opaque "../../opaque/" \
+		"$FORMATS_KSY_DIR"/*.ksy || :
+fi
+
+if [ "$TARGET" = typescript ] || [ "$TARGET" = all ]; then
+	mv -n "$FORMATS_COMPILED_DIR/typescript" "$FORMATS_COMPILED_DIR/typescript-tmp"
+	mkdir "$FORMATS_COMPILED_DIR/typescript"
+	mv -n "$FORMATS_COMPILED_DIR/typescript-tmp" "$FORMATS_COMPILED_DIR/typescript/testformats"
+
+	"$COMPILER_DIR/jvm/target/universal/stage/bin/kaitai-struct-compiler" -- \
+		--verbose file -t typescript -d "$FORMATS_COMPILED_DIR/typescript/testwrite" \
+		--no-auto-read \
+		--read-write \
+		--import-path "$FORMATS_REPO_DIR" \
+		--import-path "$FORMATS_KSY_DIR/ks_path" \
+		--typescript-opaque "../../opaque/" \
+		"$FORMATS_KSY_DIR"/*.ksy || :
 fi

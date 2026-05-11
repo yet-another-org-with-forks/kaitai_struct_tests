@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('BitsEnum', () => {
   it('parses test properly', async () => {
-    const { BitsEnum } = await import('../compiled/BitsEnum.js');
+    const { BitsEnum } = await import('#testformats/BitsEnum.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new BitsEnum(io);
     assert.strictEqual(r.one, BitsEnum.Animal.PLATYPUS);

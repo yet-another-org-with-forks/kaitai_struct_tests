@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('CombineEnum', () => {
   it('parses test properly', async () => {
-    const { CombineEnum } = await import('../compiled/CombineEnum.js');
+    const { CombineEnum } = await import('#testformats/CombineEnum.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_0.bin'));
     const r = new CombineEnum(io);
     assert.strictEqual(r.enumU4, CombineEnum.Animal.PIG);

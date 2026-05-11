@@ -4,7 +4,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('SwitchCast', () => {
 	it('parses test properly', async () => {
-		const { SwitchCast } = await import('../compiled/SwitchCast.js');
+		const { SwitchCast } = await import('#testformats/SwitchCast.js');
 		const io = new KaitaiStream(fs.readFileSync('src/switch_opcodes.bin'));
 		const r = new SwitchCast(io);
 		assert.strictEqual(r.firstObj.value, 'foobar');

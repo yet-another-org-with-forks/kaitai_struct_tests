@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('Expr3', () => {
   it('parses test properly', async () => {
-    const { Expr3 } = await import('../compiled/Expr3.js');
+    const { Expr3 } = await import('#testformats/Expr3.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new Expr3(io);
     assert.strictEqual(r.one, 80);

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('EnumToIClassBorder1', () => {
   it('parses test properly', async () => {
-    const { EnumToIClassBorder1 } = await import('../compiled/EnumToIClassBorder1.js');
+    const { EnumToIClassBorder1 } = await import('#testformats/EnumToIClassBorder1.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_0.bin'));
     const r = new EnumToIClassBorder1(io);
     assert.strictEqual(r.pet1, EnumToIClassBorder1.Animal.CAT);

@@ -4,7 +4,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('StrLiterals', () => {
   it('parses test properly', async () => {
-    const { StrLiterals } = await import('../compiled/StrLiterals.js');
+    const { StrLiterals } = await import('#testformats/StrLiterals.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new StrLiterals(io);
 

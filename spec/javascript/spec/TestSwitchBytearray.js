@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('SwitchBytearray', () => {
   it('parses test properly', async () => {
-    const { SwitchBytearray } = await import('../compiled/SwitchBytearray.js');
+    const { SwitchBytearray } = await import('#testformats/SwitchBytearray.js');
     const io = new KaitaiStream(fs.readFileSync('src/switch_opcodes.bin'));
     const r = new SwitchBytearray(io);
     assert.strictEqual(r.opcodes.length, 4);

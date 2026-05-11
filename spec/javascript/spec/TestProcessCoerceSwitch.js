@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ProcessCoerceSwitch', () => {
   it('parses test properly', async () => {
-    const { ProcessCoerceSwitch } = await import('../compiled/ProcessCoerceSwitch.js');
+    const { ProcessCoerceSwitch } = await import('#testformats/ProcessCoerceSwitch.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_coerce_switch.bin'));
     const r = new ProcessCoerceSwitch(io);
     assert.strictEqual(r.bufType, 0);

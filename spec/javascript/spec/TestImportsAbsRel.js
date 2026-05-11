@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ImportsAbsRel', () => {
   it('parses test properly', async () => {
-    const { ImportsAbsRel } = await import('../compiled/ImportsAbsRel.js');
+    const { ImportsAbsRel } = await import('#testformats/ImportsAbsRel.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new ImportsAbsRel(io);
     assert.strictEqual(r.one, 80);

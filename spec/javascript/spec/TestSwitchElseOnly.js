@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('SwitchElseOnly', () => {
   it('parses test properly', async () => {
-    const { SwitchElseOnly } = await import('../compiled/SwitchElseOnly.js');
+    const { SwitchElseOnly } = await import('#testformats/SwitchElseOnly.js');
     const io = new KaitaiStream(fs.readFileSync('src/switch_opcodes.bin'));
     const r = new SwitchElseOnly(io);
     assert.strictEqual(r.opcode, 83);

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('TermU1Val', () => {
   it('parses test properly', async () => {
-    const { TermU1Val } = await import('../compiled/TermU1Val.js');
+    const { TermU1Val } = await import('#testformats/TermU1Val.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_encodings.bin'));
     const r = new TermU1Val(io);
     assert.deepStrictEqual(r.foo, new Uint8Array([10, 0, 83, 111, 109, 101, 32, 65, 83, 67, 73, 73, 15, 0]));

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('StrPadTermZeroSize', () => {
   it('parses test properly', async () => {
-    const { StrPadTermZeroSize } = await import('../compiled/StrPadTermZeroSize.js');
+    const { StrPadTermZeroSize } = await import('#testformats/StrPadTermZeroSize.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_negative.bin'));
     const r = new StrPadTermZeroSize(io);
     assert.strictEqual(r.strPad, "");

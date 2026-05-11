@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ImportsParamsDefArrayUsertypeImported', () => {
   it('parses test properly', async () => {
-    const { ImportsParamsDefArrayUsertypeImported } = await import('../compiled/ImportsParamsDefArrayUsertypeImported.js');
+    const { ImportsParamsDefArrayUsertypeImported } = await import('#testformats/ImportsParamsDefArrayUsertypeImported.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_xor_4.bin'));
     const r = new ImportsParamsDefArrayUsertypeImported(io);
     assert.strictEqual(r.hws.length, 2);

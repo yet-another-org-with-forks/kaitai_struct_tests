@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('DocstringsDocref', () => {
   it('parses test properly', async () => {
-    const { DocstringsDocref } = await import('../compiled/DocstringsDocref.js');
+    const { DocstringsDocref } = await import('#testformats/DocstringsDocref.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new DocstringsDocref(io);
   });

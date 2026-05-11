@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('RepeatNBytes', () => {
   it('parses test properly', async () => {
-    const { RepeatNBytes } = await import('../compiled/RepeatNBytes.js');
+    const { RepeatNBytes } = await import('#testformats/RepeatNBytes.js');
     const io = new KaitaiStream(fs.readFileSync('src/repeat_until_process.bin'));
     const r = new RepeatNBytes(io);
     assert.strictEqual(r.records.length, 3);

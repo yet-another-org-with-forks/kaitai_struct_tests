@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ValidNotParsedIf', () => {
   it('parses test properly', async () => {
-    const { ValidNotParsedIf } = await import('../compiled/ValidNotParsedIf.js');
+    const { ValidNotParsedIf } = await import('#testformats/ValidNotParsedIf.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new ValidNotParsedIf(io);
   });

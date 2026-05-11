@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprToITrailing', () => {
   it('parses test properly', async () => {
-    const { ExprToITrailing } = await import('../compiled/ExprToITrailing.js');
+    const { ExprToITrailing } = await import('#testformats/ExprToITrailing.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new ExprToITrailing(io);
     assert.throws(

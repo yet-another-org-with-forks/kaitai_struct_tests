@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprBytesNonLiteral', () => {
   it('parses test properly', async () => {
-    const { ExprBytesNonLiteral } = await import('../compiled/ExprBytesNonLiteral.js');
+    const { ExprBytesNonLiteral } = await import('#testformats/ExprBytesNonLiteral.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_negative.bin'));
     const r = new ExprBytesNonLiteral(io);
     assert.strictEqual(r.calcBytes.length, 2);

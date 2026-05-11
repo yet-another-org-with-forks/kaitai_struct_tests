@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('UserType', () => {
   it('parses test properly', async () => {
-    const { UserType } = await import('../compiled/UserType.js');
+    const { UserType } = await import('#testformats/UserType.js');
     const io = new KaitaiStream(fs.readFileSync('src/repeat_until_s4.bin'));
     const r = new UserType(io);
     assert.strictEqual(r.one.width, 66);

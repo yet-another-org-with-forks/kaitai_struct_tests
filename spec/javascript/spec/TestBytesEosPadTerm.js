@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('BytesEosPadTerm', () => {
   it('parses test properly', async () => {
-    const { BytesEosPadTerm } = await import('../compiled/BytesEosPadTerm.js');
+    const { BytesEosPadTerm } = await import('#testformats/BytesEosPadTerm.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_pad_term.bin'));
     const r = new BytesEosPadTerm(io);
     assert.deepStrictEqual(r.strPad.value, new Uint8Array([115, 116, 114, 49]));

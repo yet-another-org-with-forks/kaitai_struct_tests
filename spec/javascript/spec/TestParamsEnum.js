@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ParamsEnum', () => {
   it('parses test properly', async () => {
-    const { ParamsEnum } = await import('../compiled/ParamsEnum.js');
+    const { ParamsEnum } = await import('#testformats/ParamsEnum.js');
     const io = new KaitaiStream(fs.readFileSync('src/enum_0.bin'));
     const r = new ParamsEnum(io);
     assert.strictEqual(r.one, ParamsEnum.Animal.CAT);

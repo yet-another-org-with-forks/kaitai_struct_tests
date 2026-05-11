@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ZlibSurrounded', () => {
   it('parses test properly', async () => {
-    const { ZlibSurrounded } = await import('../compiled/ZlibSurrounded.js');
+    const { ZlibSurrounded } = await import('#testformats/ZlibSurrounded.js');
     const io = new KaitaiStream(fs.readFileSync('src/zlib_surrounded.bin'));
     const r = new ZlibSurrounded(io);
     assert.strictEqual(r.zlib.num, -1);

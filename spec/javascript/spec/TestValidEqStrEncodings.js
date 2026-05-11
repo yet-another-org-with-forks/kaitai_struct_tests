@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ValidEqStrEncodings', () => {
   it('parses test properly', async () => {
-    const { ValidEqStrEncodings } = await import('../compiled/ValidEqStrEncodings.js');
+    const { ValidEqStrEncodings } = await import('#testformats/ValidEqStrEncodings.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_encodings.bin'));
     const r = new ValidEqStrEncodings(io);
   });

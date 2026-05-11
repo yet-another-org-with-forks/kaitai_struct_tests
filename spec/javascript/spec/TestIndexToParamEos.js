@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('IndexToParamEos', () => {
   it('parses test properly', async () => {
-    const { IndexToParamEos } = await import('../compiled/IndexToParamEos.js');
+    const { IndexToParamEos } = await import('#testformats/IndexToParamEos.js');
     const io = new KaitaiStream(fs.readFileSync('src/index_sizes.bin'));
     const r = new IndexToParamEos(io);
     assert.strictEqual(r.qty, 3);

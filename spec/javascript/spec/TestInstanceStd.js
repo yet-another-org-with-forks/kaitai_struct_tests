@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('InstanceStd', () => {
   it('parses test properly', async () => {
-    const { InstanceStd } = await import('../compiled/InstanceStd.js');
+    const { InstanceStd } = await import('#testformats/InstanceStd.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_encodings.bin'));
     const r = new InstanceStd(io);
     assert.strictEqual(r.header, "Some ");

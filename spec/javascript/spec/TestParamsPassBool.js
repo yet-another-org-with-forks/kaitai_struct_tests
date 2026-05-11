@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ParamsPassBool', () => {
   it('parses test properly', async () => {
-    const { ParamsPassBool } = await import('../compiled/ParamsPassBool.js');
+    const { ParamsPassBool } = await import('#testformats/ParamsPassBool.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new ParamsPassBool(io);
     assert.strictEqual(r.sFalse, false);

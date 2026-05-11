@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ProcessCustomNoArgs', () => {
   it('parses test properly', async () => {
-    const { ProcessCustomNoArgs } = await import('../compiled/ProcessCustomNoArgs.js');
+    const { ProcessCustomNoArgs } = await import('#testformats/ProcessCustomNoArgs.js');
     const io = new KaitaiStream(fs.readFileSync('src/process_rotate.bin'));
     const r = new ProcessCustomNoArgs(io);
     assert.deepStrictEqual(r.buf, new Uint8Array([95, 9, 172, 141, 141, 237, 95]));

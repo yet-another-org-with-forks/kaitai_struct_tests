@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('EnumInvalid', () => {
   it('parses test properly', async () => {
-    const { EnumInvalid } = await import('../compiled/EnumInvalid.js');
+    const { EnumInvalid } = await import('#testformats/EnumInvalid.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new EnumInvalid(io);
     assert.strictEqual(r.pet1, EnumInvalid.Animal.DOG);

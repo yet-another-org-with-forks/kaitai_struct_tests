@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('ExprCalcArrayOps', () => {
   it('parses test properly', async () => {
-    const { ExprCalcArrayOps } = await import('../compiled/ExprCalcArrayOps.js');
+    const { ExprCalcArrayOps } = await import('#testformats/ExprCalcArrayOps.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new ExprCalcArrayOps(io);
     assert.strictEqual(r.intArraySize, 7);

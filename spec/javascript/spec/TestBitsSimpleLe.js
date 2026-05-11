@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('BitsSimpleLe', () => {
   it('parses test properly', async () => {
-    const { BitsSimpleLe } = await import('../compiled/BitsSimpleLe.js');
+    const { BitsSimpleLe } = await import('#testformats/BitsSimpleLe.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new BitsSimpleLe(io);
     assert.strictEqual(r.byte1, 80);

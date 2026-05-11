@@ -4,7 +4,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('DebugArrayUser', () => {
   it('parses test properly', async () => {
-    const { DebugArrayUser } = await import('../compiled/DebugArrayUser.js');
+    const { DebugArrayUser } = await import('#testformats/DebugArrayUser.js');
     const io = new KaitaiStream(fs.readFileSync('src/fixed_struct.bin'));
     const r = new DebugArrayUser(io);
 

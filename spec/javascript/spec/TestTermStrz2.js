@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('TermStrz2', () => {
   it('parses test properly', async () => {
-    const { TermStrz2 } = await import('../compiled/TermStrz2.js');
+    const { TermStrz2 } = await import('#testformats/TermStrz2.js');
     const io = new KaitaiStream(fs.readFileSync('src/term_strz.bin'));
     const r = new TermStrz2(io);
     assert.strictEqual(r.s1, "foo");

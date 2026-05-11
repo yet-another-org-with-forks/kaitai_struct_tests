@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('FloatingPoints', () => {
   it('parses test properly', async () => {
-    const { FloatingPoints } = await import('../compiled/FloatingPoints.js');
+    const { FloatingPoints } = await import('#testformats/FloatingPoints.js');
     const io = new KaitaiStream(fs.readFileSync('src/floating_points.bin'));
     const r = new FloatingPoints(io);
     assert(Math.abs(r.singleValue - 0.5) < 1e-6);

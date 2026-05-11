@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('RepeatEosU4', () => {
   it('parses test properly', async () => {
-    const { RepeatEosU4 } = await import('../compiled/RepeatEosU4.js');
+    const { RepeatEosU4 } = await import('#testformats/RepeatEosU4.js');
     const io = new KaitaiStream(fs.readFileSync('src/repeat_eos_struct.bin'));
     const r = new RepeatEosU4(io);
     assert.strictEqual(r.numbers.length, 4);

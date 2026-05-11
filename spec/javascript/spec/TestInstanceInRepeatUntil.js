@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('InstanceInRepeatUntil', () => {
   it('parses test properly', async () => {
-    const { InstanceInRepeatUntil } = await import('../compiled/InstanceInRepeatUntil.js');
+    const { InstanceInRepeatUntil } = await import('#testformats/InstanceInRepeatUntil.js');
     const io = new KaitaiStream(fs.readFileSync('src/repeat_until_s4.bin'));
     const r = new InstanceInRepeatUntil(io);
     assert.strictEqual(r.entries.length, 5);

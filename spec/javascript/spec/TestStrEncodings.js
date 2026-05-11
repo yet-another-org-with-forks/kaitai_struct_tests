@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('StrEncodings', () => {
   it('parses test properly', async () => {
-    const { StrEncodings } = await import('../compiled/StrEncodings.js');
+    const { StrEncodings } = await import('#testformats/StrEncodings.js');
     const io = new KaitaiStream(fs.readFileSync('src/str_encodings.bin'));
     const r = new StrEncodings(io);
     assert.strictEqual(r.str1, "Some ASCII");

@@ -6,7 +6,7 @@ import { KaitaiStream } from 'kaitai-struct';
 
 describe('EnumIf', () => {
   it('parses test properly', async () => {
-    const { EnumIf } = await import('../compiled/EnumIf.js');
+    const { EnumIf } = await import('#testformats/EnumIf.js');
     const io = new KaitaiStream(fs.readFileSync('src/if_struct.bin'));
     const r = new EnumIf(io);
     assert.strictEqual(r.op1.opcode, EnumIf.Opcodes.A_STRING);
